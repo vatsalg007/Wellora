@@ -124,12 +124,3 @@ Demo Reset     → Tap Wellora logo 3 times on any screen
 ## Team
 
 Built with ❤️ for ET AI Hackathon 2026
-```
-
----
-
-Save the file then run:
-```
-git add README.md
-git commit -m "Add README"
-git push origin main
