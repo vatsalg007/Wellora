@@ -1,50 +1,135 @@
-# Welcome to your Expo app 👋
+# Wellora 🏥
+### AI-Powered Post-Surgical Recovery Platform
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Built for **ET AI Hackathon 2026** | Problem Statement 5 — Domain-Specialized AI Agents with Compliance Guardrails
 
-## Get started
+---
 
-1. Install dependencies
+## What is Wellora?
 
-   ```bash
-   npm install
-   ```
+Wellora is a multi-agent AI system that takes complete ownership of the post-surgical recovery pipeline. It monitors patients autonomously, detects complications, self-corrects failed check-ins, and escalates critical cases to physicians — with every decision fully auditable.
 
-2. Start the app
+---
 
-   ```bash
-   npx expo start
-   ```
+## Agent Architecture
 
-In the output, you'll find options to open the app in a
+| Agent | Role |
+|-------|------|
+| 🤖 MonitorAgent | Analyzes daily patient check-ins via multilingual voice input |
+| 🔍 DiagnosticAgent | Detects wound infection using Claude Vision AI |
+| 💊 PrescriptionAgent | Reads handwritten prescriptions via OCR |
+| ⚖️ TriageAgent | Calculates real-time risk scores (0-100) |
+| 🔄 RetryAgent | Detects missed check-ins and triggers SMS fallback |
+| 🚨 EscalationAgent | Auto-alerts doctors with SLA timer enforcement |
+| ✅ VerificationAgent | Logs doctor acknowledgment with response time |
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+---
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## Key Features
 
-## Get a fresh project
+- **Multilingual Support** — 6 Indian languages (Hindi, Tamil, Bengali, Telugu, Marathi, English)
+- **Vision AI** — Clinical wound assessment with explainable reasoning
+- **Prescription OCR** — Handwritten prescription digitization
+- **Autonomous Escalation** — Missed check-ins trigger automatic doctor alerts
+- **SLA Enforcement** — 2-minute response window with on-call escalation
+- **Full Audit Trail** — Every agent decision logged with timestamp
+- **Dual Interface** — Separate patient and doctor dashboards
 
-When you're ready, run:
+---
 
-```bash
-npm run reset-project
+## Tech Stack
+```
+Frontend    → React Native + Expo (TypeScript)
+AI Engine   → Claude Sonnet (Anthropic API)
+Storage     → AsyncStorage (prototype)
+Auth        → Expo Local Authentication (biometric + PIN)
+Speech      → Expo Speech (text-to-speech)
+Vision      → Claude Vision API
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+---
 
-## Learn more
+## Setup Instructions
 
-To learn more about developing your project with Expo, look at the following resources:
+### Prerequisites
+- Node.js v18+
+- Expo Go app on your phone (iOS or Android)
+- Anthropic API key
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+### Installation
+```bash
+# Clone the repository
+git clone https://github.com/vatsalg007/Wellora.git
 
-## Join the community
+# Navigate to project
+cd Wellora
 
-Join our community of developers creating universal apps.
+# Install dependencies
+npm install
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+# Create environment file
+echo "EXPO_PUBLIC_ANTHROPIC_KEY=your_api_key_here" > .env
+
+# Start the app
+npx expo start
+```
+
+### Running the App
+1. Install **Expo Go** on your phone
+2. Run `npx expo start` in terminal
+3. Scan the QR code with Expo Go (Android) or Camera (iOS)
+
+---
+
+## Demo Credentials
+```
+Patient Login  → Fill name, age, surgery, recovery day
+Doctor PIN     → 1234
+Demo Reset     → Tap Wellora logo 3 times on any screen
+```
+
+---
+
+## Demo Flow
+```
+1. Login as Patient → complete daily check-in (MonitorAgent)
+2. Upload wound photo → get AI analysis (DiagnosticAgent)
+3. Scan prescription → get medication schedule (PrescriptionAgent)
+4. Logout → Login as Doctor (PIN: 1234)
+5. View Command Center → real-time patient data
+6. Watch SLA timer → auto-escalation if no acknowledgment
+7. Check Audit Log → full agent decision trail
+```
+
+---
+
+## Compliance & Safety
+
+- AI reasoning path shown for every clinical decision (XAI)
+- Guardrails prevent hallucination in medical assessments
+- Audit trail for regulatory compliance (DPDP Act 2023)
+- Production architecture uses AWS HealthLake (FHIR-compliant)
+
+---
+
+## Impact Model
+
+- **15M** post-surgical patients annually in India
+- **41%** of readmissions are preventable
+- **₹3,500 crore** in avoidable readmission costs
+- Wellora targets **30% reduction** in missed complication detection
+
+---
+
+## Team
+
+Built with ❤️ for ET AI Hackathon 2026
+```
+
+---
+
+Save the file then run:
+```
+git add README.md
+git commit -m "Add README"
+git push origin main
