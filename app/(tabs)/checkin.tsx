@@ -244,6 +244,9 @@ Return only the JSON, no other text.`,
         await AsyncStorage.setItem('checkinResult', JSON.stringify(parsed));
         await AsyncStorage.setItem('checkinDate', new Date().toLocaleDateString());
         await AsyncStorage.setItem('checkinTime', new Date().toLocaleTimeString());
+        await AsyncStorage.setItem('missedCheckin', 'false');
+        await AsyncStorage.removeItem('alertAcknowledged');
+        await AsyncStorage.removeItem('alertEscalated');
         
       const checkinAuditEntry = {
         time: new Date().toLocaleTimeString(),

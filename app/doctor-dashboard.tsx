@@ -159,7 +159,7 @@ export default function DoctorDashboard() {
     return `${mins}m ${secs.toString().padStart(2, '0')}s`;
   };
 
-  const SLA_LIMIT_SECONDS = 60;
+  const SLA_LIMIT_SECONDS = 120;
 
   const getTimerColor = (): string => {
     if (timeElapsed >= SLA_LIMIT_SECONDS) return '#E74C3C';
@@ -313,7 +313,7 @@ export default function DoctorDashboard() {
 
       <View style={styles.header}>
         <Text style={styles.headerTitle}>Command Center</Text>
-        <Text style={styles.headerSub}>Dr. Sharma · Cardiology</Text>
+        <Text style={styles.headerSub}>Dr. Sharma · Ortho</Text>
       </View>
 
       {isCritical && !acknowledged && (
